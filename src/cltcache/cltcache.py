@@ -134,8 +134,8 @@ def compute_cache_key(clang_tidy_call, config):
 
 
 def init_cltcache():
-    cltcache_path = os.environ.get(
-        "CLTCACHE_DIR", pathlib.Path().home() / ".cltcache")
+    cltcache_path = pathlib.Path(os.environ.get(
+        "CLTCACHE_DIR", pathlib.Path().home() / ".cltcache"))
     cltcache_path.mkdir(parents=True, exist_ok=True)
     config = configparser.ConfigParser()
     config.read(cltcache_path / "cltcache.cfg")
