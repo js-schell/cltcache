@@ -3,6 +3,7 @@
 A simple clang-tidy caching application. Prefix calls to clang-tidy to cache
 their results for faster static code analysis.
 """
+import configparser
 import gzip
 import hashlib
 import os
@@ -11,7 +12,6 @@ import re
 import subprocess
 import sys
 import time
-import configparser
 
 
 def save_to_file_raw(data, filename):
